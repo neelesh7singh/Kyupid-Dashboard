@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Kyupid-Dashboard/static/css/main.8f25b444.css",
+    "main.js": "/Kyupid-Dashboard/static/js/main.fde0db21.js",
+    "index.html": "/Kyupid-Dashboard/index.html",
+    "main.8f25b444.css.map": "/Kyupid-Dashboard/static/css/main.8f25b444.css.map",
+    "main.fde0db21.js.map": "/Kyupid-Dashboard/static/js/main.fde0db21.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8f25b444.css",
+    "static/js/main.fde0db21.js"
+  ]
+}
