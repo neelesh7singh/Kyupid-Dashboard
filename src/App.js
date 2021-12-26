@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext, useEffect } from 'react';
+import Dropdown from './components/Dropdown';
+import GoogleMapComponent from './components/GoogleMapComponent';
+import Navbar from './components/Navbar';
+import RankingList from './components/RankingList';
+import { AppDataContext } from './context/AppData';
+import SelectedAreaProvider from './context/SelectedArea';
+import SelectedMetricProvider from './context/SelectedMetric';
+import { getData } from './utils';
 
 function App() {
+  const { setAreas } = useContext(AppDataContext);
+
+  useEffect(() => {
+    (async () => {
+      setAreas(await getData());
+    })();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App container'>
+      <Navbar />
+      <SelectedMetricProvider>
+        <Dropdown />
+        <SelectedAreaProvider>
+          <GoogleMapComponent />
+          <RankingList />
+        </SelectedAreaProvider>
+      </SelectedMetricProvider>
     </div>
   );
 }
