@@ -17,7 +17,7 @@ const Dropdown = () => {
         <option value='userCount'>User Count</option>
         <option value='maleCount'>Male User</option>
         <option value='femaleCount'>Female User</option>
-        <option value='maleFemalRatio'>Male:Femal Ratio</option>
+        <option value='maleFemalRatio'>Male : Femal Ratio</option>
         <option value='avgAge'>Average Age</option>
         <option value='avgMatch'>Average Matchs</option>
       </select>

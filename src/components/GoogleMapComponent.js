@@ -58,11 +58,18 @@ const GoogleMapComponent = () => {
         {areas && selectedArea && (
           <InfoWindow position={areas[selectedArea].center}>
             <>
-              {' '}
-              <div>
-                {areas[selectedArea].name} :{' '}
-                {areas[selectedArea][selectedMetric]}
-              </div>
+              {selectedMetric !== 'maleFemalRatio' && (
+                <div>
+                  {areas[selectedArea].name} :{' '}
+                  {areas[selectedArea][selectedMetric]}
+                </div>
+              )}
+              {selectedMetric === 'maleFemalRatio' && (
+                <div>
+                  {areas[selectedArea].name} :{' '}
+                  {areas[selectedArea].maleFemalRatioText}
+                </div>
+              )}
             </>
           </InfoWindow>
         )}
