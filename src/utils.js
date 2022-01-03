@@ -103,18 +103,24 @@ export const mapValues = (areas, option) => {
   let val = {};
 
   Object.keys(areas).forEach((key) => {
-    if (areas[key][option]) {
-      minVal = Math.min(minVal, areas[key][option]);
-      maxVal = Math.max(minVal, areas[key][option]);
+    if (option === 'maleFemalRatio') {
+      if (areas[key][option]) {
+        minVal = Math.min(minVal, areas[key][option]);
+        maxVal = Math.max(minVal, areas[key][option]);
+      }
+    } else {
+      if (areas[key][option]) {
+        minVal = Math.min(minVal, areas[key][option]);
+        maxVal = Math.max(maxVal, areas[key][option]);
+      }
     }
   });
 
   Object.keys(areas).forEach((key) => {
-    // console.log(minVal);
-    let delta = 5;
-    if (option === 'avgAge') delta = Infinity;
-    let value =
-      (areas[key][option] - (minVal - minVal / delta)) / (maxVal - minVal);
+    let value = (areas[key][option] - minVal) / (maxVal - minVal);
+
+    if (val === 0) val += 0.3;
+
     val[key] = {
       fillColor: '#5f6061',
       strokeColor: '#3b3d40',

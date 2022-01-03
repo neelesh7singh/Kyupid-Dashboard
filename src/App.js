@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react';
 import Dropdown from './components/Dropdown';
 import GoogleMapComponent from './components/GoogleMapComponent';
+import Legend from './components/Legend';
 import Navbar from './components/Navbar';
 import RankingList from './components/RankingList';
 import { AppDataContext } from './context/AppData';
@@ -26,6 +27,7 @@ function App() {
           <RankingList />
         </SelectedAreaProvider>
       </SelectedMetricProvider>
+      <Legend />
     </div>
   );
 }

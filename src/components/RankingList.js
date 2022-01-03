@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AppDataContext } from '../context/AppData';
 import { SelectedAreaContext } from '../context/SelectedArea';
 import { SelectedMetricContext } from '../context/SelectedMetric';
@@ -7,6 +7,7 @@ const RankingList = () => {
   const { areas } = useContext(AppDataContext);
   const { setSelectedArea } = useContext(SelectedAreaContext);
   const { selectedMetric } = useContext(SelectedMetricContext);
+  const [order, setOrder] = useState(0);
 
   if (!areas) return <></>;
 
@@ -21,6 +22,7 @@ const RankingList = () => {
     if (a[selectedMetric] < b[selectedMetric]) return 1;
     else return -1;
   });
+  if (order === 1) areasArr.reverse();
 
   return (
     <div className='rangeList'>
@@ -28,7 +30,14 @@ const RankingList = () => {
         Areas according to rank
       </div>
       <div className='heading'>
-        <div>Area Name</div>
+        <div
+          onClick={() => setOrder((order) => 1 - order)}
+          className='headingArea'
+        >
+          Area Name
+          {order === 0 && <i class='arrow down'></i>}
+          {order === 1 && <i class='arrow up'></i>}
+        </div>
         <div>Metric</div>
       </div>
       <ul className='rankingList list-group'>

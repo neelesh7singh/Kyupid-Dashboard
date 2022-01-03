@@ -13,7 +13,7 @@ import { SelectedMetricContext } from '../context/SelectedMetric';
 
 const containerStyle = {
   width: '65%',
-  height: '82vh',
+  height: '77vh',
 };
 
 const center = {
