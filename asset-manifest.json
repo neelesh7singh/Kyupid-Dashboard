@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Kyupid-Dashboard/static/css/main.8f25b444.css",
-    "main.js": "/Kyupid-Dashboard/static/js/main.62eaa612.js",
+    "main.css": "/Kyupid-Dashboard/static/css/main.04cfbe47.css",
+    "main.js": "/Kyupid-Dashboard/static/js/main.08288f4a.js",
     "index.html": "/Kyupid-Dashboard/index.html",
-    "main.8f25b444.css.map": "/Kyupid-Dashboard/static/css/main.8f25b444.css.map",
-    "main.62eaa612.js.map": "/Kyupid-Dashboard/static/js/main.62eaa612.js.map"
+    "main.04cfbe47.css.map": "/Kyupid-Dashboard/static/css/main.04cfbe47.css.map",
+    "main.08288f4a.js.map": "/Kyupid-Dashboard/static/js/main.08288f4a.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f25b444.css",
-    "static/js/main.62eaa612.js"
+    "static/css/main.04cfbe47.css",
+    "static/js/main.08288f4a.js"
   ]
 }
